@@ -1,0 +1,45 @@
+@import "./variable";
+@import "./mixins";
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $typography;
+    margin: 0;
+}
+
+header {
+    @include flexCenter(row);
+    background-color: $HeaderFooterColor;
+    color: white;
+    height: 10em;
+    margin-bottom: 3em;
+}
+
+footer {
+    @extend header;
+    height: 6em;
+    margin-bottom: 0em;
+}
+
+#navbar-lg {
+    @include flexCenter(row);
+
+    a {
+        color: $HeaderFooterColor;
+    }
+
+    li {
+        display: inline-block;
+        font-size: large;
+        margin: 0rem 1.5rem;
+    }
+}
+
+#project-section {
+    margin-top: 1.5rem;
+    text-align: center;
+    min-height: calc(100vh - 40px);
+}
